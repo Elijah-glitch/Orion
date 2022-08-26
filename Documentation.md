@@ -69,23 +69,7 @@ Tab:AddBind({
 		print("press")
 	end    
 })
-
---[[
-Name = <string> - The name of the bind.
-Default = <keycode> - The default value of the bind.
-Hold = <bool> - Makes the bind work like: Holding the key > The bind returns true, Not holding the key > Bind returns false.
-Callback = <function> - The function of the bind.
-]]
-```
-
-### Chaning the value of a bind
-```lua
 Bind:Set(Enum.KeyCode.E)
-```
-
-
-## Creating a Dropdown menu
-```lua
 Tab:AddDropdown({
 	Name = "Dropdown",
 	Default = "1",
