@@ -1,15 +1,4 @@
-# Orion Library
-This documentation is for the stable release of Orion Library.
-
-## Booting the Library
-```lua
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-```
-
-
-
-## Creating a Window
-```lua
 local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 local Tab = Window:MakeTab({
 	Name = "Tab 1",
@@ -46,16 +35,6 @@ Tab:AddColorpicker({
 		print(Value)
 	end	  
 })
-
---[[
-Name = <string> - The name of the colorpicker.
-Default = <color3> - The default value of the colorpicker.
-Callback = <function> - The function of the colorpicker.
-]]
-```
-
-### Setting the color picker's value
-```lua
 ColorPicker:Set(Color3.fromRGB(255,255,255))
 Tab:AddSlider({
 	Name = "Slider",
@@ -69,49 +48,11 @@ Tab:AddSlider({
 		print(Value)
 	end    
 })
-
---[[
-Name = <string> - The name of the slider.
-Min = <number> - The minimal value of the slider.
-Max = <number> - The maxium value of the slider.
-Increment = <number> - How much the slider will change value when dragging.
-Default = <number> - The default value of the slider.
-ValueName = <string> - The text after the value number.
-Callback = <function> - The function of the slider.
-]]
-```
-
-### Change Slider Value
-```lua
 Slider:Set(2)
-```
-Make sure you make your slider a variable (local CoolSlider = Tab:AddSlider...) for this to work.
-
-
-## Creating a Label
-```lua
 Tab:AddLabel("Label")
-```
-
-### Changing the value of an existing label
-```lua
 CoolLabel:Set("Label New!")
-```
-
-
-## Creating a Paragraph
-```lua
 Tab:AddParagraph("Paragraph","Paragraph Content")
-```
-
-### Changing an existing paragraph
-```lua
 CoolParagraph:Set("Paragraph New!", "New Paragraph Content!")
-```
-
-
-## Creating an Adaptive Input
-```lua
 Tab:AddTextbox({
 	Name = "Textbox",
 	Default = "default box input",
