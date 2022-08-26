@@ -61,18 +61,6 @@ Tab:AddTextbox({
 		print(Value)
 	end	  
 })
-
---[[
-Name = <string> - The name of the textbox.
-Default = <string> - The default value of the textbox.
-TextDisappear = <bool> - Makes the text disappear in the textbox after losing focus.
-Callback = <function> - The function of the textbox.
-]]
-```
-
-
-## Creating a Keybind
-```lua
 Tab:AddBind({
 	Name = "Bind",
 	Default = Enum.KeyCode.E,
@@ -106,55 +94,14 @@ Tab:AddDropdown({
 		print(Value)
 	end    
 })
-
---[[
-Name = <string> - The name of the dropdown.
-Default = <string> - The default value of the dropdown.
-Options = <table> - The options in the dropdown.
-Callback = <function> - The function of the dropdown.
-]]
-```
-
-### Adding a set of new Dropdown buttons to an existing menu
-```lua
 Dropdown:Refresh(List<table>,true)
-```
-
-The above boolean value "true" is whether or not the current buttons will be deleted.
-### Selecting a dropdown option
-```lua
 Dropdown:Set("dropdown option")
-```
-
-# Finishing your script (REQUIRED)
-The below function needs to be added at the end of your code.
-```lua
 OrionLib:Init()
-```
-
-### How flags work.
-The flags feature in the ui may be confusing for some people. It serves the purpose of being the ID of an element in the config file, and makes accessing the value of an element anywhere in the code possible.
-Below in an example of using flags.
-```lua
 Tab1:AddToggle({
     Name = "Toggle",
     Default = true,
     Save = true,
     Flag = "toggle"
 })
-
 print(OrionLib.Flags["toggle"].Value) -- prints the value of the toggle.
-```
-Flags only work with the toggle, slider, dropdown, bind, and colorpicker.
-
-### Making your interface work with configs.
-In order to make your interface use the configs function you first need to add the `SaveConfig` and `ConfigFolder` arguments to your window function. The explanation of these arguments in above.
-Then you need to add the `Flag` and `Save` values to every toggle, slider, dropdown, bind, and colorpicker you want to include in the config file.
-The `Flag = <string>` argument is the ID of an element in the config file.
-The `Save = <bool>` argument includes the element in the config file.
-Config files are made for every game the library is launched in.
-
-## Destroying the Interface
-```lua
 OrionLib:Destroy()
-```
